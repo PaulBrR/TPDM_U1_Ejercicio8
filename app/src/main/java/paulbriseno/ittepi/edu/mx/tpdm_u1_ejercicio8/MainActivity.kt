@@ -15,15 +15,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        campoCadena=findViewById(R.id.campoCade)
 
         botonACt=findViewById(R.id.botonAct)
 
         botonACt?.setOnClickListener {
-
-            campoCadena?.text.toString().substring(2)
+            var datos=campoCadena?.text.toString()
 
 
             var abrirMostrar = Intent(this,Main2Activity::class.java)
+            abrirMostrar.putExtra("datos",datos)
             startActivity(abrirMostrar)
 
         }
